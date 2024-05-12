@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "coreproject-opengraph"
+version = "0.1.0"
+description = "Python bindings for coreproject svg generation"
+authors = ["baseplate-admin <61817579+baseplate-admin@users.noreply.github.com>"]
+license = "AGPL-v3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+svg-py = "^1.4.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
