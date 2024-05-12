@@ -6,6 +6,7 @@ THRESHOLD = 40
 
 def title_gradient(text: str):
     add_gradient = False
+
     if len(text.strip()) >= THRESHOLD:
         add_gradient = True
         text = text[0:37] + "..."
