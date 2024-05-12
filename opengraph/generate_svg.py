@@ -1,5 +1,7 @@
 import svg
 from helpers.image_to_base64 import image_to_base64
+from gradient.title import title_gradient
+from maps import id_maps
 
 
 def generate_svg(background_image):
@@ -31,7 +33,7 @@ def generate_svg(background_image):
                         width=1150,
                         height=580,
                         rx=24,
-                        style="fill:url(#paint0_linear_4350_5517)",
+                        style=f"fill:url(#{id_maps['gradient_1']})",
                     ),
                     svg.Rect(
                         x=25,
@@ -39,16 +41,72 @@ def generate_svg(background_image):
                         width=1150,
                         height=580,
                         rx=24,
-                        style="fill:url(#paint1_linear_4350_5517)",
+                        style=f"fill:url(#{id_maps['gradient_2']})",
                     ),
+                ]
+            ),
+            svg.G(
+                elements=[
+                    svg.Text(
+                        fill="#dcd9f7",
+                        style="white-space:pre",
+                        font_family="Kokoro",
+                        font_size="16px",
+                        font_weight="bold",
+                        letter_spacing="0rem",
+                        elements=[
+                            svg.TSpan(
+                                x=887.90,
+                                y=108.98,
+                                text="coreproject.moe",
+                            )
+                        ],
+                    ),
+                    svg.Text(
+                        fill="#afafaf",
+                        style="white-space:pre",
+                        font_family="Kokoro",
+                        font_size="16px",
+                        font_weight="600",
+                        letter_spacing="0rem",
+                        elements=[
+                            svg.TSpan(
+                                x=1011.72,
+                                y=108.98,
+                                text="/anime/163078",
+                            )
+                        ],
+                    ),
+                ],
+            ),
+            svg.G(
+                elements=[
+                    title_gradient("Yoru no Kurage wa Oyogenai Me LOVES ACG 1"),
                 ]
             ),
             # Our linear Gradient things
             svg.Defs(
-                id="defs57",
                 elements=[
                     svg.LinearGradient(
-                        id="paint0_linear_4350_5517",
+                        id=f"{id_maps['title_gradient']}",
+                        x1="0",
+                        y1="15",
+                        x2="498.196",
+                        y2="15",
+                        gradientUnits="userSpaceOnUse",
+                        elements=[
+                            svg.Stop(
+                                offset="0%",
+                                stop_color="rgba(7, 5, 25, 0)",
+                            ),
+                            svg.Stop(
+                                stop_color="rgba(0, 0, 0, 0.3)",
+                                offset="71.68%",
+                            ),
+                        ],
+                    ),
+                    svg.LinearGradient(
+                        id=f"{id_maps['gradient_1']}",
                         x1=600,
                         y1=25,
                         x2=600,
@@ -68,7 +126,7 @@ def generate_svg(background_image):
                         ],
                     ),
                     svg.LinearGradient(
-                        id="paint1_linear_4350_5517",
+                        id=f"{id_maps['gradient_2']}",
                         x1=25,
                         y1=315,
                         x2=1175,
@@ -76,57 +134,55 @@ def generate_svg(background_image):
                         gradientUnits="userSpaceOnUse",
                         elements=[
                             svg.Stop(
-                                id="stop-52",
                                 stop_color="#070519",
                             ),
                             svg.Stop(
-                                id="stop-53",
                                 offset="1",
                                 stop_color="#070519",
                                 stop_opacity="0",
                             ),
                         ],
                     ),
-                    svg.LinearGradient(
-                        id="paint2_linear_4350_5517",
-                        x1=75,
-                        y1=189,
-                        x2=518,
-                        y2=189,
-                        gradientUnits="userSpaceOnUse",
-                        elements=[
-                            svg.Stop(
-                                id="stop-54",
-                                stop_color="#070519",
-                                stop_opacity="0",
-                            ),
-                            svg.Stop(
-                                id="stop-55",
-                                offset="1",
-                                stop_opacity="0.5",
-                            ),
-                        ],
-                    ),
-                    svg.LinearGradient(
-                        id="paint3_linear_4350_5517",
-                        x1=384,
-                        y1=290,
-                        x2=384,
-                        y2=476,
-                        gradientUnits="userSpaceOnUse",
-                        elements=[
-                            svg.Stop(
-                                id="stop-56",
-                                stop_color="#070519",
-                                stop_opacity="0",
-                            ),
-                            svg.Stop(
-                                id="stop-57",
-                                offset="1",
-                                stop_opacity="0.8",
-                            ),
-                        ],
-                    ),
+                    # svg.LinearGradient(
+                    #     id="paint2_linear_4350_5517",
+                    #     x1=75,
+                    #     y1=189,
+                    #     x2=518,
+                    #     y2=189,
+                    #     gradientUnits="userSpaceOnUse",
+                    #     elements=[
+                    #         svg.Stop(
+                    #             id="stop-54",
+                    #             stop_color="#070519",
+                    #             stop_opacity="0",
+                    #         ),
+                    #         svg.Stop(
+                    #             id="stop-55",
+                    #             offset="1",
+                    #             stop_opacity="0.5",
+                    #         ),
+                    #     ],
+                    # ),
+                    # svg.LinearGradient(
+                    #     id="paint3_linear_4350_5517",
+                    #     x1=384,
+                    #     y1=290,
+                    #     x2=384,
+                    #     y2=476,
+                    #     gradientUnits="userSpaceOnUse",
+                    #     elements=[
+                    #         svg.Stop(
+                    #             id="stop-56",
+                    #             stop_color="#070519",
+                    #             stop_opacity="0",
+                    #         ),
+                    #         svg.Stop(
+                    #             id="stop-57",
+                    #             offset="1",
+                    #             stop_opacity="0.8",
+                    #         ),
+                    #     ],
+                    # ),
                 ],
             ),
         ],
