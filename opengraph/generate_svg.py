@@ -4,7 +4,7 @@ from gradient.title import title_gradient
 from maps import id_maps
 
 
-def generate_svg(background_image):
+def generate_svg(background_image, title):
     canvas = svg.SVG(
         viewBox=[0, 0, 1200, 630],
         width=1200,
@@ -81,7 +81,7 @@ def generate_svg(background_image):
             ),
             svg.G(
                 elements=[
-                    title_gradient("Yoru no Kurage wa Oyogenai Me LOVES ACG 1"),
+                    title_gradient(title),
                 ]
             ),
             # Our linear Gradient things
@@ -192,7 +192,7 @@ def generate_svg(background_image):
 
 
 if __name__ == "__main__":
-    x = generate_svg("./test.jpg")
+    x = generate_svg("./test.jpg", "Yoru no Kurage wa Oyogenai Me LOVES ACG 1")
     with open("test.svg", "w") as f:
         f.write(str(x))
     print(x)
