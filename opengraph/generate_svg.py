@@ -31,8 +31,7 @@ def generate_svg(background_image):
                         width=1150,
                         height=580,
                         rx=24,
-                        fill="#paint0_linear_4350_5517",
-                        fill_opacity=0.4,
+                        style="fill:url(#paint0_linear_4350_5517)",
                     ),
                     svg.Rect(
                         x=25,
@@ -40,8 +39,7 @@ def generate_svg(background_image):
                         width=1150,
                         height=580,
                         rx=24,
-                        fill="#paint1_linear_4350_5517",
-                        fill_opacity=0.4,
+                        style="fill:url(#paint1_linear_4350_5517)",
                     ),
                 ]
             ),
