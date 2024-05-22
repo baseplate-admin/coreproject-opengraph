@@ -1,5 +1,6 @@
 import svg
 from maps import id_maps
+from states import gradients
 
 THRESHOLD = 40
 
@@ -39,5 +40,26 @@ def title_gradient(text: str):
                     style="color:white",
                 ),
             ]
+        )
+
+        gradients.gradient_list.append(
+            svg.LinearGradient(
+                id=f"{id_maps['title_gradient']}",
+                x1="0",
+                y1="15",
+                x2="498.196",
+                y2="15",
+                gradientUnits="userSpaceOnUse",
+                elements=[
+                    svg.Stop(
+                        offset="0%",
+                        stop_color="rgba(7, 5, 25, 0)",
+                    ),
+                    svg.Stop(
+                        stop_color="rgba(0, 0, 0, 0.3)",
+                        offset="71.68%",
+                    ),
+                ],
+            ),
         )
     return canvas

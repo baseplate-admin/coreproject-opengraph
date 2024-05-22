@@ -3,6 +3,10 @@ from helpers.image_to_base64 import image_to_base64
 from gradient.title import title_gradient
 from maps import id_maps
 
+from states import gradients
+
+gradients.init()
+
 
 def generate_svg(background_image, title):
     canvas = svg.SVG(
@@ -88,24 +92,6 @@ def generate_svg(background_image, title):
             svg.Defs(
                 elements=[
                     svg.LinearGradient(
-                        id=f"{id_maps['title_gradient']}",
-                        x1="0",
-                        y1="15",
-                        x2="498.196",
-                        y2="15",
-                        gradientUnits="userSpaceOnUse",
-                        elements=[
-                            svg.Stop(
-                                offset="0%",
-                                stop_color="rgba(7, 5, 25, 0)",
-                            ),
-                            svg.Stop(
-                                stop_color="rgba(0, 0, 0, 0.3)",
-                                offset="71.68%",
-                            ),
-                        ],
-                    ),
-                    svg.LinearGradient(
                         id=f"{id_maps['gradient_1']}",
                         x1=600,
                         y1=25,
@@ -183,7 +169,8 @@ def generate_svg(background_image, title):
                     #         ),
                     #     ],
                     # ),
-                ],
+                ]
+                + gradients.gradient_list,
             ),
         ],
     )
