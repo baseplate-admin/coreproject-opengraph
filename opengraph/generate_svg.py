@@ -3,9 +3,9 @@ from helpers.image_to_base64 import image_to_base64
 from gradient.title import title_gradient
 from maps import id_maps
 
-from states import gradients
+from states.gradients import State as GradientState
 
-gradients.init()
+gradient_state_machine = GradientState()
 
 
 def generate_svg(background_image, title):
@@ -170,7 +170,7 @@ def generate_svg(background_image, title):
                     #     ],
                     # ),
                 ]
-                + gradients.gradient_list,
+                + gradient_state_machine.get(),
             ),
         ],
     )

@@ -1,11 +1,12 @@
 import svg
 from maps import id_maps
-from states import gradients
+from states.gradients import State
 
 THRESHOLD = 40
 
 
 def title_gradient(text: str):
+    gradient_state_machine = State()
     add_gradient = False
 
     if len(text.strip()) >= THRESHOLD:
@@ -42,7 +43,7 @@ def title_gradient(text: str):
             ]
         )
 
-        gradients.gradient_list.append(
+        gradient_state_machine.append(
             svg.LinearGradient(
                 id=f"{id_maps['title_gradient']}",
                 x1="0",
