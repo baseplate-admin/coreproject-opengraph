@@ -6,5 +6,6 @@ id_maps = {
     "gradient_1": uuid.uuid4(),
     "gradient_2": uuid.uuid4(),
     # Custom text gradients
-    "title_gradient": uuid.uuid4(),
+    "build_title": uuid.uuid4(),
+    "build_secondary_title": uuid.uuid4(),
 }

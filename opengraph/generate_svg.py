@@ -1,7 +1,7 @@
 import svg
 from helpers.image_to_base64 import image_to_base64
-from gradient.title import title_gradient
-from gradient.secondary_title import secondary_title_gradient
+from builder.title import build_title
+from builder.secondary_title import build_secondary_title
 from maps import id_maps
 
 from states.gradients import State as GradientState
@@ -86,11 +86,16 @@ def generate_svg(background_image, title):
             ),
             svg.G(
                 elements=[
-                    title_gradient(title),
-                    secondary_title_gradient(['HELLLOWORLDDSSDFSDFSD','Fdsafasdsdfsdfsdfasdfasdfsdf']),
+                    build_title(title),
+                    build_secondary_title(
+                        [
+                            "HELLLOWORLDDSSDFSDFSD",
+                            "Fdsafasdsdfsdfsdfasdfasdfsdf",
+                            "dfasfasdfujasdhufghuweihuiortwehuiorhouiwehrouiewuhrhuioweuhiorwe",
+                        ]
+                    ),
                 ]
             ),
-            
             # Our linear Gradient things
             svg.Defs(
                 elements=[
@@ -185,4 +190,4 @@ if __name__ == "__main__":
     x = generate_svg("./test.jpg", "Yoru no Kurage wa Oyogenai Me LOVES ACG 1")
     with open("test.svg", "w") as f:
         f.write(str(x))
-    print(x)
+    # print(x)

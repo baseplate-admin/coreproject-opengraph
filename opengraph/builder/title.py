@@ -5,7 +5,7 @@ from states.gradients import State
 THRESHOLD = 40
 
 
-def title_gradient(text: str):
+def build_title(text: str):
     gradient_state_machine = State()
     add_gradient = False
 
@@ -37,7 +37,7 @@ def title_gradient(text: str):
                     x=75,
                     y=197.96001,
                     text=text,
-                    fill=f"url('#{id_maps['title_gradient']}')",
+                    fill=f"url('#{id_maps['build_title']}')",
                     style="color:white",
                 ),
             ]
@@ -45,7 +45,7 @@ def title_gradient(text: str):
 
         gradient_state_machine.append(
             svg.LinearGradient(
-                id=f"{id_maps['title_gradient']}",
+                id=f"{id_maps['build_title']}",
                 x1="0",
                 y1="15",
                 x2="498.196",
