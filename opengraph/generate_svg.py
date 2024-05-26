@@ -2,6 +2,7 @@ import svg
 from helpers.image_to_base64 import image_to_base64
 from builder.title import build_title
 from builder.secondary_title import build_secondary_title
+from builder.description import build_description
 from maps import id_maps
 
 from states.gradients import State as GradientState
@@ -9,7 +10,7 @@ from states.gradients import State as GradientState
 gradient_state_machine = GradientState()
 
 
-def generate_svg(background_image, title):
+def generate_svg(background_image, title, secondary_title, description):
     canvas = svg.SVG(
         viewBox=[0, 0, 1200, 630],
         width=1200,
@@ -87,13 +88,8 @@ def generate_svg(background_image, title):
             svg.G(
                 elements=[
                     build_title(title),
-                    build_secondary_title(
-                        [
-                            "HELLLOWORLDDSSDFSDFSD",
-                            "Fdsafasdsdfsdfsdfasdfasdfsdf",
-                            "dfasfasdfujasdhufghuweihuiortwehuiorhouiwehrouiewuhrhuioweuhiorwe",
-                        ]
-                    ),
+                    build_secondary_title(secondary_title),
+                    build_description(description),
                 ]
             ),
             # Our linear Gradient things
@@ -187,7 +183,21 @@ def generate_svg(background_image, title):
 
 
 if __name__ == "__main__":
-    x = generate_svg("./test.jpg", "Yoru no Kurage wa Oyogenai Me LOVES ACG 1")
+    x = generate_svg(
+        "./test.jpg",
+        "Yoru no Kurage wa Oyogenai Me LOVES ACG 1",
+        [
+            "HELLLOWORLDDSSDFSDFSD",
+            "Fdsafasdsdfsdfsdfasdfasdfsdf",
+            "dfasfasdfujasdhufghuweihuiortwehuiorhouiwehrouiewuhrhuioweuhiorwe",
+        ],
+        """
+        "I want to find what I enjoy."
+        
+Mahiru Kouzuki, a skilled artist, gives up on her passion after her elementary school classmates ridicule her colorful jellyfish mural. Several years later, upon encountering an unexpected admirer in Kano Yamanouchi—a former idol with a troubled past—Mahiru decides to pursue her childhood dreams once more.
+
+Tasked with designing the mascot for Kano's new music project, JELEE, Mahiru enlists the help of her childhood friend and professional streamer Kiui Watase to make JELEE's first music video. Together with Kim Anouk Mei Takanashi, a pianist and fan of Kano's work as an idol, the girls aim to turn JELEE into a global hit. However, if they want to succeed in this ambitious endeavor, they will first have to free themselves from the shackles of their pasts.        """,
+    )
     with open("test.svg", "w") as f:
         f.write(str(x))
     # print(x)

@@ -37,7 +37,7 @@ def build_title(text: str):
                     x=75,
                     y=197.96001,
                     text=text,
-                    fill=f"url('#{id_maps['build_title']}')",
+                    fill=f"url('#{id_maps['title']}')",
                     style="color:white",
                 ),
             ]
@@ -45,7 +45,7 @@ def build_title(text: str):
 
         gradient_state_machine.append(
             svg.LinearGradient(
-                id=f"{id_maps['build_title']}",
+                id=f"{id_maps['title']}",
                 x1="0",
                 y1="15",
                 x2="498.196",

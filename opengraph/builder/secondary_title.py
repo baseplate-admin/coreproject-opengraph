@@ -56,7 +56,7 @@ def build_secondary_title(text: list[str]):
                     x=75,
                     y=234.98,
                     text=final_text,
-                    fill=f"url('#{id_maps['build_secondary_title']}')",
+                    fill=f"url('#{id_maps['secondary_title']}')",
                     style="color:white",
                 ),
             ]
@@ -64,7 +64,7 @@ def build_secondary_title(text: list[str]):
 
         gradient_state_machine.append(
             svg.LinearGradient(
-                id=f"{id_maps['build_secondary_title']}",
+                id=f"{id_maps['secondary_title']}",
                 x1="0",
                 y1="15",
                 x2="498.196",
