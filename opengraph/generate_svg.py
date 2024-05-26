@@ -1,6 +1,7 @@
 import svg
 from helpers.image_to_base64 import image_to_base64
 from gradient.title import title_gradient
+from gradient.secondary_title import secondary_title_gradient
 from maps import id_maps
 
 from states.gradients import State as GradientState
@@ -86,8 +87,10 @@ def generate_svg(background_image, title):
             svg.G(
                 elements=[
                     title_gradient(title),
+                    secondary_title_gradient(['HELLLOWORLDDSSDFSDFSD','Fdsafasdsdfsdfsdfasdfasdfsdf']),
                 ]
             ),
+            
             # Our linear Gradient things
             svg.Defs(
                 elements=[
